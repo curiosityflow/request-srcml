@@ -14,11 +14,16 @@ int main() {
     	srcml_request request = { "", "", "", ""};
     	assert(request_filename(request) == "");
     	assert(request_language(request, "") == "");
+    }
 
+    {
+    	srcml_request request = { "", "local_file.zip", "entry_file.zip", "" };
+    	assert(request_filename(request) == "entry_file.zip");
+    }
 
-        srcml_request request = { "", "mydata.cpp", "data", ""};
+    {
+      srcml_request request = { "", "mydata.cpp", "data", "" };
     	assert(request_filename(request) == "mydata.cpp");
-
     }
 
     return 0;
