@@ -26,5 +26,10 @@ int main() {
     	assert(request_filename(request) == "mydata.cpp");
     }
 
+    {
+      srcml_request request = { "option_filename.h", "local_filename.zip", "entry_filename.cpp", "" };
+    	assert(request_filename(request) == "option_filename.h");
+    }
+
     return 0;
 }
