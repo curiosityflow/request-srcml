@@ -16,6 +16,16 @@ std::string request_filename(const srcml_request& request) {
         return request.local_filename;
     }
 
+    // find the last extension (including the '.')
+    std::string entry_filename = request.entry_filename;
+    int pos = entry_filename.rfind('.');
+    if(pos != std::string::npos) {
+      std::string extension = entry_filename.substr(pos);
+      if(extension == ".gz" || extension == ".zip") {
+        return request.entry_filename;
+      }
+    }
+
     return filename;
 }
 
