@@ -34,11 +34,7 @@ std::string request_filename(const srcml_request& request) {
 
 // extracts the language to use from the request, and the filename
 std::string request_language(const srcml_request& request, const std::string& filename) {
-
-    // TODO: determine the proper filename from the request
-    std::string language;
-
-    return language;
+    return get_language_from_filename(filename);
 }
 
 // generates srcML based on the request
