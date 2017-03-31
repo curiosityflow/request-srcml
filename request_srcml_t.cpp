@@ -36,5 +36,10 @@ int main() {
       assert(request_language(request, "mydata.cpp") == "C++");
     }
 
+    {
+      srcml_request request = { "", "mydata.cpp", "", "Ruby" };
+      assert(request_language(request, "mydata.cpp") == "Ruby");
+    }
+
     return 0;
 }
