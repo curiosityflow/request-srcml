@@ -31,5 +31,10 @@ int main() {
     	assert(request_filename(request) == "option_filename.h");
     }
 
+    {
+      srcml_request request = { "", "mydata.cpp", "", "" };
+      assert(request_language(request, "mydata.cpp") == "C++");
+    }
+
     return 0;
 }
