@@ -17,8 +17,8 @@ int main() {
     }
 
     {
-    	srcml_request request = { "", "local_file.zip", "entry_file.zip", "" };
-    	assert(request_filename(request) == "entry_file.zip");
+    	srcml_request request = { "", "compress_file.something", "main.cpp", "" };
+    	assert(request_filename(request) == "main.cpp");
     }
 
     {
