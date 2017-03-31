@@ -41,5 +41,12 @@ int main() {
       assert(request_language(request, "mydata.cpp") == "Ruby");
     }
 
+    {
+      srcml_request request = { "", "-", "data", "" };
+      assert(request_filename(request) == "");
+    }
+
+
+
     return 0;
 }
