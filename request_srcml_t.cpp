@@ -11,7 +11,7 @@ int main() {
 
 	// all filenames and languages empty
     {
-    	srcml_request request = { "", "", "", ""};
+    	srcml_request request = { "", "", "", "" };
     	assert(request_filename(request) == "");
     	assert(request_language(request, "") == "");
     }
@@ -47,16 +47,14 @@ int main() {
     }
 
     {
-      srcml_request request = {"", "myfile.something", "", ""};
+      srcml_request request = {"", "myfile.something", "", "" };
       assert(generate_srcml(request) == false);
     }
 
     {
-      srcml_request request = {"", "-", "", ""};
+      srcml_request request = {"", "-", "", "" };
       assert(generate_srcml(request) == false);
     }
-
-
 
     return 0;
 }
