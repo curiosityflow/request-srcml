@@ -22,8 +22,6 @@ std::string request_filename(const srcml_request& request) {
   } else {
     return request.entry_filename;
   }
-
-  return "";
 }
 
 // extracts the language to use from the request, and the filename
