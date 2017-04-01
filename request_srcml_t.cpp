@@ -51,6 +51,11 @@ int main() {
       assert(generate_srcml(request) == false);
     }
 
+    {
+      srcml_request request = {"", "-", "", ""};
+      assert(generate_srcml(request) == false);
+    }
+
 
 
     return 0;
