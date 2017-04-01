@@ -46,6 +46,11 @@ int main() {
       assert(request_filename(request) == "");
     }
 
+    {
+      srcml_request request = {"", "myfile.something", "", ""};
+      assert(generate_srcml(request) == false);
+    }
+
 
 
     return 0;
