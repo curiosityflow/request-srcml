@@ -4,6 +4,7 @@
   Implementation of request_srcml()
 */
 
+#include <iostream>
 #include "request_srcml.hpp"
 #include "get_language_from_filename.hpp"
 
@@ -37,11 +38,15 @@ std::string request_language(const srcml_request& request, const std::string& fi
 }
 
 // generates srcML based on the request
-void generate_srcml(const srcml_request& request) {
+bool generate_srcml(const srcml_request& request) {
 
 	std::string filename = request_filename(request);
 
 	std::string language = request_language(request, filename);
+  if(request.option_language.empty() && language.empty()) {
+    std::cerr << "Extension not supported\n";
+    return false;
+  }
 
 	// srcML generation code that is not available yet
 }
